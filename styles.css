@@ -13,6 +13,31 @@ body {
     background-color: #000000;
     color: rgb(0, 0, 0);
 }
+/* Catalog Modal Scroll Fix */
+.catalog-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto !important;  /* Enable scrolling */
+  z-index: 9999;
+}
+
+/* Catalog content container scroll */
+.catalog-content {
+  max-height: 90vh;  /* Fits inside screen */
+  overflow-y: auto;  /* Scroll inside */
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
 .catalog-btn {
   background: linear-gradient(90deg, #D4AF37, #F4D992);
   color: black;
