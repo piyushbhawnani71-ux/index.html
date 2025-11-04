@@ -84,11 +84,11 @@ body {
 }
 
 .catalog-grid img {
-  width: 100%;
-  height: 420px;
+  width: 60%;
+  height: 220px;
   object-fit: cover;
   border: 2px solid #D4AF37;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
