@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ree Jewellery — Handcrafted Jewellery</title>
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Basic meta for SEO -->
+  <meta name="description" content="Handcrafted necklaces, earrings, and rings — modern & classic designs.">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo" href="#">Ree Jewellery</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+ 
+
+      <button class="catalog-btn" onclick="openCatalog()">View Catalog</button>
+      <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
+      <div class="header-actions">
+        <button id="cartBtn" aria-label="Open cart">Cart (<span id="cartCount">0</span>)</button>
+        <button id="mobileMenuBtn" class="mobile-only" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <!-- mobile nav (hidden on desktop) -->
+    <div id="mobileNav" class="mobile-nav hidden">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Timeless Handcrafted Jewellery</h1>
+        <p>Delicate pieces that tell a story — free shipping over ₹2,000.</p>
+        <a class="btn" href="#shop">Shop Collections</a>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <!-- Placeholder image, replace with your own -->
+        <img src="https://via.placeholder.com/640x480?text=Jewellery+Hero" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION / SHOP -->
+  <section id="shop" class="section container">
+    <div class="section-header">
+      <h2>Our Collections</h2>
+      <p>Explore rings, necklaces, earrings and curated sets.</p>
+    </div>
+
+    <!-- product filters (non-functional example) -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="filterCategory">Category</label>
+        <select id="filterCategory">
+          <option value="all">All</option>
+          <option value="necklace">Necklaces</option>
+          <option value="earrings">Earrings</option>
+          <option value="ring">Rings</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sortBy">Sort</label>
+        <select id="sortBy">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price — low to high</option>
+          <option value="price-desc">Price — high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="productsGrid" class="products-grid" aria-live="polite">
+      <!-- Products are injected by scripts.js -->
+    </div>
+
+    <div class="section-footer">
+      <a class="btn-outline" href="#contact">Request Custom Design</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about container">
+    <h2>About Riya Jewels</h2>
+    <p>We craft fine jewellery using sustainable materials and intentional design. Each piece is handcrafted with attention to detail.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section container contact-section">
+    <h2>Contact & Orders</h2>
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input id="name" required placeholder="Your name">
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="you@domain.com">
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us about the piece you want"></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Riya Jewels</h3>
+        <p>Handcrafted with love. Follow us on social media.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>email@example.com<br>+91 98765 43210</p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Riya Jewels — handcrafted in India</div>
+  </footer>
+
+  <!-- PRODUCT QUICKVIEW / CART MODAL -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Close">✕</button>
+
+      <!-- Quickview content -->
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- CART SLIDEOVER -->
+  <aside id="cartPanel" class="cart-panel hidden" aria-hidden="true">
+    <button id="closeCart" class="modal-close">✕</button>
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <div>Subtotal: <strong id="cartTotal">₹0</strong></div>
+      <button id="checkoutBtn" class="btn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="scripts.js" defer></script>
+</body>
+<div id="catalogModal" class="catalog-modal">
+  <div class="catalog-content">
+    <span class="close-btn" onclick="closeCatalog()">&times;</span>
+    <h2>Our Catalog</h2>
+
+    <div class="catalog-grid">
+      <img src="catalog 1.jpg" alt="Ring">
+      <img src="catalog 2.jpg" alt="Necklace">
+      <img src="catalog 3.jpg" alt="Earring">
+      <img src="images/bangle1.jpg" alt="Bangle">
+      <!-- Add more images - just copy line and change file name -->
+    </div>
+  </div>
+</div>
+
+</html>
