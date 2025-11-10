@@ -4,10 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const products = [
     { id: 'p1', title: 'Pearl Drop Necklace', price: 599, category:'necklace', img:'necklace.jpeg', desc:'Elegant freshwater pearl on a dainty chain.'},
     { id: 'p2', title: 'Gold Stud Earrings', price: 299, category:'earrings', img:'earings.jpeg', desc:'Classic studs finished in 18K vermeil.'},
-    { id: 'p3', title: 'Floral Ring', price: 1999, category:'ring', img:'https://via.placeholder.com/640x480?text=Floral+Ring', desc:'Statement ring with floral motif.'},
-    { id: 'p4', title: 'Minimal Bar Pendant', price: 999, category:' Big necklace', img:'Big necklCE.jpeg', desc:'Everyday minimalist pendant.'},
-    { id: 'p5', title: 'Chandelier Earrings', price: 2999, category:'earrings', img:'https://via.placeholder.com/640x480?text=Chandelier', desc:'Party-ready chandelier earrings.'},
-    { id: 'p6', title: 'Stackable Rings Set', price: 1799, category:'ring', img:'https://via.placeholder.com/640x480?text=Stack+Rings', desc:'Three delicate stackable rings.'}
+    
+    { id: 'p3', title: 'Minimal Bar Pendant', price: 999, category:' Big necklace', img:'Big necklCE.jpeg', desc:'Everyday minimalist pendant.'},
+    
   ];
 
   // cache DOM
